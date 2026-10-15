@@ -1,0 +1,40 @@
+
+name: Demo Workflow
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  
+  build_on_ubuntu:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      - name: show python version
+        run: python --version
+      
+      - name: echo hello world
+        run: echo "Hello World"
+      
+      - name: show system information
+        run: |
+          date
+          uname -a
+          
+  build_on_windows:
+    
+    runs-on: windows-latest
+    
+    steps:
+
+      - name: show python version
+        run: python --version
+      
+      - name: echo hello world
+        run: echo "Hello World"
+      
+      - name: Get system information
+        run: Get-Date; Get-ComputerInfo
