@@ -19,9 +19,6 @@ jobs:
       - name: echo hello world
         run: echo "Hello World"
       
-      - name: install dependencies
-        run: pip install -r ~/requirements.txt  
-      
       - name: show system information
         run: |
           date
