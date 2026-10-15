@@ -1,22 +1,29 @@
 
+name: CI/CD Pipeline
+
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  
+  build_on_ubuntu:
+    
+    runs-on: ubuntu=20.04
+    
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+
+      - name: show python version
+        run: python --version
+      
+      - name: echo hello world
+        run: echo "Hello World"
+      
+      - name: install dependencies
+        run: pip install -r ~/requirements.txt  
+      
+      - name: show system information
+        run: |
+          date
+          uname -a
+
